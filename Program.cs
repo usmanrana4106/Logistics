@@ -1,3 +1,6 @@
+global using logistics.Models.Enums;
+global using logistics.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
