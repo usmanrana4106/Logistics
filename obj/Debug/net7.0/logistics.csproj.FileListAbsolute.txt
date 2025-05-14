@@ -31,3 +31,36 @@
 /Volumes/Macintosh HD - Data/dotnet projects/logistics/obj/Debug/net7.0/logistics.pdb
 /Volumes/Macintosh HD - Data/dotnet projects/logistics/obj/Debug/net7.0/logistics.genruntimeconfig.cache
 /Volumes/Macintosh HD - Data/dotnet projects/logistics/obj/Debug/net7.0/ref/logistics.dll
+C:\Development\Logistics\bin\Debug\net7.0\appsettings.Development.json
+C:\Development\Logistics\bin\Debug\net7.0\appsettings.json
+C:\Development\Logistics\bin\Debug\net7.0\logistics.exe
+C:\Development\Logistics\bin\Debug\net7.0\logistics.deps.json
+C:\Development\Logistics\bin\Debug\net7.0\logistics.runtimeconfig.json
+C:\Development\Logistics\bin\Debug\net7.0\logistics.dll
+C:\Development\Logistics\bin\Debug\net7.0\logistics.pdb
+C:\Development\Logistics\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Development\Logistics\bin\Debug\net7.0\Microsoft.OpenApi.dll
+C:\Development\Logistics\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Development\Logistics\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Development\Logistics\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Development\Logistics\obj\Debug\net7.0\logistics.csproj.AssemblyReference.cache
+C:\Development\Logistics\obj\Debug\net7.0\logistics.GeneratedMSBuildEditorConfig.editorconfig
+C:\Development\Logistics\obj\Debug\net7.0\logistics.AssemblyInfoInputs.cache
+C:\Development\Logistics\obj\Debug\net7.0\logistics.AssemblyInfo.cs
+C:\Development\Logistics\obj\Debug\net7.0\logistics.csproj.CoreCompileInputs.cache
+C:\Development\Logistics\obj\Debug\net7.0\logistics.MvcApplicationPartsAssemblyInfo.cs
+C:\Development\Logistics\obj\Debug\net7.0\logistics.MvcApplicationPartsAssemblyInfo.cache
+C:\Development\Logistics\obj\Debug\net7.0\staticwebassets\msbuild.logistics.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Development\Logistics\obj\Debug\net7.0\staticwebassets\msbuild.build.logistics.props
+C:\Development\Logistics\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.logistics.props
+C:\Development\Logistics\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.logistics.props
+C:\Development\Logistics\obj\Debug\net7.0\staticwebassets.pack.json
+C:\Development\Logistics\obj\Debug\net7.0\staticwebassets.build.json
+C:\Development\Logistics\obj\Debug\net7.0\staticwebassets.development.json
+C:\Development\Logistics\obj\Debug\net7.0\scopedcss\bundle\logistics.styles.css
+C:\Development\Logistics\obj\Debug\net7.0\logistics.csproj.CopyComplete
+C:\Development\Logistics\obj\Debug\net7.0\logistics.dll
+C:\Development\Logistics\obj\Debug\net7.0\refint\logistics.dll
+C:\Development\Logistics\obj\Debug\net7.0\logistics.pdb
+C:\Development\Logistics\obj\Debug\net7.0\logistics.genruntimeconfig.cache
+C:\Development\Logistics\obj\Debug\net7.0\ref\logistics.dll

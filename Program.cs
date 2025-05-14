@@ -1,5 +1,6 @@
 global using logistics.Models.Enums;
 global using logistics.Models;
+using Logistics.Services.DriverService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<IDriverService, DriverService>();
 
 var app = builder.Build();
 
