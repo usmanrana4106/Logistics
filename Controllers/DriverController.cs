@@ -20,23 +20,23 @@ namespace logistics.Controllers
 
         [HttpGet]
         [Route("getalldrivers")]
-        public ActionResult<List<Drivers>> getAllDriver()
+        public async Task<ActionResult<ServiceResponse<List<Drivers>>>> getAllDriver()
         {
-            return Ok(_DriverService.getAllDrivers());
+            return Ok(await _DriverService.getAllDrivers());
         }
 
         [HttpGet]
         [Route("getdriver/{id}")]
-        public ActionResult<Drivers> getDriver(int id)
+        public async Task<ActionResult<ServiceResponse<Drivers>>> getDriver(int id)
         {
-            return Ok(_DriverService.getDriver(id)); 
+            return Ok(await _DriverService.getDriver(id)); 
         }
 
         [HttpPost]
         [Route("addDriver")]
-        public ActionResult <List<Drivers>> addDriver(Drivers newDriver)
+        public async Task<ActionResult<ServiceResponse<List<Drivers>>>> addDriver(Drivers newDriver)
         {
-            return Ok(_DriverService.addDriver(newDriver));
+            return Ok(await _DriverService.addDriver(newDriver));
         }
     }
 }
