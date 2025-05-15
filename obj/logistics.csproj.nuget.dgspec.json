@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Volumes/Macintosh HD - Data/dotnet projects/logistics/logistics.csproj": {}
+    "C:\\Development\\Logistics\\logistics.csproj": {}
   },
   "projects": {
-    "/Volumes/Macintosh HD - Data/dotnet projects/logistics/logistics.csproj": {
+    "C:\\Development\\Logistics\\logistics.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Volumes/Macintosh HD - Data/dotnet projects/logistics/logistics.csproj",
+        "projectUniqueName": "C:\\Development\\Logistics\\logistics.csproj",
         "projectName": "logistics",
-        "projectPath": "/Volumes/Macintosh HD - Data/dotnet projects/logistics/logistics.csproj",
-        "packagesPath": "/Users/usmanabbas/.nuget/packages/",
-        "outputPath": "/Volumes/Macintosh HD - Data/dotnet projects/logistics/obj/",
+        "projectPath": "C:\\Development\\Logistics\\logistics.csproj",
+        "packagesPath": "C:\\Users\\usman\\.nuget\\packages\\",
+        "outputPath": "C:\\Development\\Logistics\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/usmanabbas/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\usman\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -38,6 +38,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[7.0.20, )"
@@ -66,7 +70,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.410/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.405\\RuntimeIdentifierGraph.json"
         }
       }
     }

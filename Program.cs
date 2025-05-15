@@ -1,6 +1,10 @@
 global using logistics.Models.Enums;
 global using logistics.Models;
+global using Logistics.Dtos.Drivers;
+global using AutoMapper;
+
 using Logistics.Services.DriverService;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +15,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IDriverService, DriverService>();
+builder.Services.AddAutoMapper(typeof(Program).Assembly);
 
 var app = builder.Build();
 
