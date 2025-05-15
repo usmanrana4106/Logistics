@@ -15,24 +15,27 @@ namespace Logistics.Services.DriverService
                 id_number = "2134456712"
             }
         };
-        public List<Drivers> getAllDrivers()
+        public async Task<ServiceResponse<List<Drivers>>> getAllDrivers()
         {
-            return drivers;
+            var response = new ServiceResponse<List<Drivers>>();
+            response.data = drivers;
+            return response;
         }
 
-        public Drivers getDriver(int id)
+        public async Task<ServiceResponse<Drivers>> getDriver(int id)
         {
            var driver =  drivers.FirstOrDefault(d => d.id == id); 
-           if(driver is not null)
-            return driver;
-
-            throw new Exception("Driver Not Exist");
+           var response = new ServiceResponse<Drivers>();
+           response.data = driver;
+           return response;
         }
 
-        public List<Drivers> addDriver(Drivers newDriver)
+        public async Task<ServiceResponse<List<Drivers>>> addDriver(Drivers newDriver)
         {
             drivers.Add(newDriver);
-            return drivers;
+            var response = new ServiceResponse<List<Drivers>>();
+            response.data = drivers;
+            return response;
         }
     }
 }
