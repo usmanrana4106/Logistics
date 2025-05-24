@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Development\\Logistics\\logistics.csproj": {}
+    "/Volumes/Macintosh HD - Data/dotnet projects/logistics/logistics.csproj": {}
   },
   "projects": {
-    "C:\\Development\\Logistics\\logistics.csproj": {
+    "/Volumes/Macintosh HD - Data/dotnet projects/logistics/logistics.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Development\\Logistics\\logistics.csproj",
+        "projectUniqueName": "/Volumes/Macintosh HD - Data/dotnet projects/logistics/logistics.csproj",
         "projectName": "logistics",
-        "projectPath": "C:\\Development\\Logistics\\logistics.csproj",
-        "packagesPath": "C:\\Users\\usman\\.nuget\\packages\\",
-        "outputPath": "C:\\Development\\Logistics\\obj\\",
+        "projectPath": "/Volumes/Macintosh HD - Data/dotnet projects/logistics/logistics.csproj",
+        "packagesPath": "/Users/usmanabbas/.nuget/packages/",
+        "outputPath": "/Volumes/Macintosh HD - Data/dotnet projects/logistics/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\usman\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/usmanabbas/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -70,7 +70,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.405\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.410/RuntimeIdentifierGraph.json"
         }
       }
     }

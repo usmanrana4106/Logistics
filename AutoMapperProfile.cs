@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using logistics.Dtos.Drivers;
 
 namespace Logistics
 {
@@ -11,6 +12,7 @@ namespace Logistics
         {
             CreateMap<Drivers, GetDriverDto>();
             CreateMap<AddDriverDto, Drivers>();
+            CreateMap<UpdateDriverDto, Drivers>();
         }
     }
 }

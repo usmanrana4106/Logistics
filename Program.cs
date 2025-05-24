@@ -1,6 +1,7 @@
 global using logistics.Models.Enums;
 global using logistics.Models;
 global using Logistics.Dtos.Drivers;
+global using logistics.Dtos.Drivers;
 global using AutoMapper;
 
 using Logistics.Services.DriverService;
@@ -14,7 +15,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddScoped<IDriverService, DriverService>();
+builder.Services.AddSingleton<IDriverService, DriverService>();
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 
 var app = builder.Build();

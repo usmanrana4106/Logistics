@@ -38,5 +38,15 @@ namespace logistics.Controllers
         {
             return Ok(await _DriverService.addDriver(newDriver));
         }
+
+        [HttpPut]
+        [Route("updateDriver")]
+        public async Task<ActionResult<ServiceResponse<GetDriverDto>>> updateDriver(UpdateDriverDto updatedDriver)
+        {
+            var response = await _DriverService.updateDriver(updatedDriver);
+            if (response.data == null)
+                return NotFound(response);
+            return Ok(response);
+        }
     }
 }

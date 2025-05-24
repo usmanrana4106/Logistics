@@ -49,5 +49,31 @@ namespace Logistics.Services.DriverService
             response.data = drivers.Select( d => _mapper.Map<GetDriverDto>(d)).ToList();
             return response;
         }
+
+
+        public async Task<ServiceResponse<GetDriverDto>> updateDriver(UpdateDriverDto updatedDriver)
+        {
+            var response = new ServiceResponse<GetDriverDto>();
+            try
+            {
+                var driver = drivers.FirstOrDefault(d => d.id == updatedDriver.id);
+                if (driver == null)
+                    throw new Exception($"Driver Not Found at the Id {updatedDriver.id}");
+                driver.fullname = updatedDriver.fullname;
+                driver.id_number = updatedDriver.id_number;
+                driver.mobile = updatedDriver.mobile;
+                driver.status = updatedDriver.status;
+
+                response.data = _mapper.Map<GetDriverDto>(driver);
+
+
+            }
+            catch (Exception Exception)
+            {
+                response.success = false;
+                response.message = Exception.Message;
+            }
+            return response;
+        }
     }
 }
