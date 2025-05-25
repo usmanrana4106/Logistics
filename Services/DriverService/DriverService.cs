@@ -18,23 +18,26 @@ namespace Logistics.Services.DriverService
         };
 
         private readonly IMapper _mapper;
+        private readonly DataContext _context;
 
-        public DriverService(IMapper mapper)
+        public DriverService(IMapper mapper, DataContext context)
         {
             _mapper = mapper;
+            _context = context;
         }
 
         public async Task<ServiceResponse<List<GetDriverDto>>> getAllDrivers()
         {
             var response = new ServiceResponse<List<GetDriverDto>>();
-            var driverslist = _mapper.Map<List<GetDriverDto>>(drivers);
+            var dblist = await _context.Drivers.ToListAsync();
+            var driverslist = _mapper.Map<List<GetDriverDto>>(dblist);
             response.data = driverslist;
             return response;
         }
 
         public async Task<ServiceResponse<GetDriverDto>> getDriver(int id)
         {
-           var driver =  drivers.FirstOrDefault(d => d.id == id); 
+           var driver = await _context.Drivers.FirstOrDefaultAsync(d => d.id == id); 
            var response = new ServiceResponse<GetDriverDto>();
            response.data = _mapper.Map<GetDriverDto>(driver);;
            return response;
@@ -43,10 +46,18 @@ namespace Logistics.Services.DriverService
         public async Task<ServiceResponse<List<GetDriverDto>>> addDriver(AddDriverDto newDriver)
         {
             var response = new ServiceResponse<List<GetDriverDto>>();
-            var driver = _mapper.Map<Drivers>(newDriver);
-            driver.id = drivers.Max(d => d.id) + 1;
-            drivers.Add(driver);
-            response.data = drivers.Select( d => _mapper.Map<GetDriverDto>(d)).ToList();
+            try
+            {
+                var driver = _mapper.Map<Drivers>(newDriver);
+                _context.Drivers.Add(driver);
+                await _context.SaveChangesAsync();
+                response.data = await _context.Drivers.Select(d => _mapper.Map<GetDriverDto>(d)).ToListAsync();
+            }
+            catch (Exception Exception)
+            {
+                response.success = false;
+                response.message = Exception.Message;
+            }
             return response;
         }
 
@@ -56,13 +67,15 @@ namespace Logistics.Services.DriverService
             var response = new ServiceResponse<GetDriverDto>();
             try
             {
-                var driver = drivers.FirstOrDefault(d => d.id == updatedDriver.id);
+                var driver = await _context.Drivers.FirstOrDefaultAsync(d => d.id == updatedDriver.id);
                 if (driver == null)
                     throw new Exception($"Driver Not Found at the Id {updatedDriver.id}");
                 driver.fullname = updatedDriver.fullname;
                 driver.id_number = updatedDriver.id_number;
                 driver.mobile = updatedDriver.mobile;
                 driver.status = updatedDriver.status;
+
+                await _context.SaveChangesAsync();
 
                 response.data = _mapper.Map<GetDriverDto>(driver);
 
@@ -73,6 +86,28 @@ namespace Logistics.Services.DriverService
                 response.success = false;
                 response.message = Exception.Message;
             }
+            return response;
+        }
+
+        public async Task<ServiceResponse<List<GetDriverDto>>> deleteDriver(int id)
+        {
+            var response = new ServiceResponse<List<GetDriverDto>>();
+            try
+            {
+                var driver = await _context.Drivers.FirstOrDefaultAsync(d => d.id == id);
+                if (driver == null)
+                    throw new Exception($"Driver is not found on the given ID {id}");
+                _context.Drivers.Remove(driver);
+                await _context.SaveChangesAsync();
+                // response.data = _mapper.Map<List<GetDriverDto>>(drivers);    
+                response.data = await _context.Drivers.Select(d => _mapper.Map<GetDriverDto>(d)).ToListAsync();   
+            }
+            catch (Exception Exception)
+            {
+                response.success = false;
+                response.message = Exception.Message;
+            }
+
             return response;
         }
     }

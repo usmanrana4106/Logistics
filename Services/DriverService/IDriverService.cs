@@ -12,5 +12,6 @@ namespace Logistics.Services.DriverService
         public Task<ServiceResponse<List<GetDriverDto>>> getAllDrivers();
         public Task<ServiceResponse<List<GetDriverDto>>> addDriver(AddDriverDto newDriver);
         public Task<ServiceResponse<GetDriverDto>> updateDriver(UpdateDriverDto updatedDriver);
+        public Task<ServiceResponse<List<GetDriverDto>>> deleteDriver(int id);
     }
 }

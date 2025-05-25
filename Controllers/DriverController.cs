@@ -9,7 +9,7 @@ namespace logistics.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class DriverController :ControllerBase
+    public class DriverController : ControllerBase
     {
         private readonly IDriverService _DriverService;
 
@@ -29,7 +29,7 @@ namespace logistics.Controllers
         [Route("getdriver/{id}")]
         public async Task<ActionResult<ServiceResponse<GetDriverDto>>> getDriver(int id)
         {
-            return Ok(await _DriverService.getDriver(id)); 
+            return Ok(await _DriverService.getDriver(id));
         }
 
         [HttpPost]
@@ -44,6 +44,16 @@ namespace logistics.Controllers
         public async Task<ActionResult<ServiceResponse<GetDriverDto>>> updateDriver(UpdateDriverDto updatedDriver)
         {
             var response = await _DriverService.updateDriver(updatedDriver);
+            if (response.data == null)
+                return NotFound(response);
+            return Ok(response);
+        }
+
+        [HttpDelete]
+        [Route("deleteDriver/{id}")]
+        public async Task<ActionResult<ServiceResponse<List<GetDriverDto>>>> deleteDriver(int id)
+        {
+            var response = await _DriverService.deleteDriver(id);
             if (response.data == null)
                 return NotFound(response);
             return Ok(response);
